@@ -19,15 +19,15 @@ attribute_list = [
     'geometry',
     'strname',
     'hausnr',
-    'artbot',
-    'artdtsch',
+    'art_bot',
+    'art_dtsch',
     'standortnr',
     'baumhoehe',
     'stammdurch',
     'kronedurch',
     'aend_dat',
     'gattung',
-    'gattungdeutsch',
+    'gattung_deutsch',
     'pflanzjahr',
     'stammumfg',
     'lat',
@@ -41,10 +41,10 @@ database_table_name_default = 'trees_tmp'
 
 def configure_trees_process_args(parser=argparse.ArgumentParser(description='Transform trees data')):
     parser.add_argument('-c', '--city-shape-geojson-file-name', dest='city_shape_file_name', action='store',
-                        help='Provide GeoJSON file name of city shape to use', default='city_shape-small')
+                        help='Provide GeoJSON file name of city shape to use', default='city_shape')
     parser.add_argument('-t', '--trees-geojson-file-name', dest='trees_file_name', action='store',
                         help='Provide GeoJSON file name of tress data to use',
-                        default='s_wfs_baumbestand_2023-07-08-small')
+                        default='s_wfs_baumbestand_2025-01-07')
     parser.add_argument('-j', '--geojson-file-name', dest='geojson_file_name', action='store',
                         help='Provide file name to store GeoJSON file locally',
                         default=geojson_file_name_default)

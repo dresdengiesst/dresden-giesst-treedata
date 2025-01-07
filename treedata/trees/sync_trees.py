@@ -9,9 +9,9 @@ def create_trees_table(engine):
                 "id" text NOT NULL,
                 "lat" text,
                 "lng" text,
-                "artdtsch" text,
-                "artbot" text,
-                "gattungdeutsch" text,
+                "art_dtsch" text,
+                "art_bot" text,
+                "gattung_deutsch" text,
                 "gattung" text,
                 "standortnr" text,
                 "strname" text,
@@ -65,7 +65,7 @@ def insert_added_trees(engine, original_tree_table, tmp_tree_table):
 def updated_trees(engine, original_tree_table, tmp_tree_table):
     sql_update_str = f'''
         WITH subquery AS (
-            SELECT B."id", B."lat", B."lng", B."artdtsch", B."artbot", B."gattungdeutsch", B."gattung", 
+            SELECT B."id", B."lat", B."lng", B."art_dtsch", B."art_bot", B."gattung_deutsch", B."gattung", 
                    B."standortnr", B."strname", B."hausnr", B."pflanzjahr", B."stammumfg", 
                    B."kronedurch", B."baumhoehe", B."bezirk", B."geom", B."aend_dat" 
             FROM public."{tmp_tree_table}" AS B
@@ -74,15 +74,15 @@ def updated_trees(engine, original_tree_table, tmp_tree_table):
         SET 
         "lat" = B."lat", 
         "lng" = B."lng", 
-        "artdtsch" = B."artdtsch", 
-        "artbot" = B."artbot", 
-        "gattungdeutsch" = B."gattungdeutsch", 
+        "art_dtsch" = B."art_dtsch", 
+        "art_bot" = B."art_bot", 
+        "gattung_deutsch" = B."gattung_deutsch", 
         "gattung" = B."gattung", 
         "standortnr" = B."standortnr", 
         "strname" = B."strname", 
         "hausnr" = B."hausnr", 
         "pflanzjahr" = B."pflanzjahr", 
-        "stammumfg" = B."stammumfg",            
+        "stammumfg" = B."stammumfg",
         "kronedurch" = B."kronedurch",
         "baumhoehe" = B."baumhoehe", 
         "bezirk" = B."bezirk",
