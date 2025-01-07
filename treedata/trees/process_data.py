@@ -100,8 +100,8 @@ def lookup_district(inputs):
     if 'geometry' in inputs and 'city_shape' in inputs:
         geometry = inputs['geometry']
         return get_district(
-            geometry.x.round(5),
-            geometry.y.round(5),
+            round(geometry.x, 5),
+            round(geometry.y, 5),
             inputs['city_shape']
         )
     else:
