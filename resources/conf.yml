@@ -3,8 +3,8 @@ data-schema:
     geometry: geometry
     name: strname
     standort_nr: hausnr
-    art_botanisch: artbot
-    art_deutsch: artdtsch
+    art_botanisch: art_bot
+    art_deutsch: art_dtsch
     gml_id: standortnr
     baumhoehe_akt: baumhoehe
     stammdurchmesser_akt: stammdurch
@@ -14,7 +14,7 @@ data-schema:
       inputs:
         art_botanisch: species
       function: lookup_genus
-    gattungdeutsch:
+    gattung_deutsch:
       inputs:
         art_botanisch: species
       function: lookup_genus_german
