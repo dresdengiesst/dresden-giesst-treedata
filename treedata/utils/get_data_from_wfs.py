@@ -33,7 +33,7 @@ def download_wfs_to_xml(wfs_url, source_encoding, outfile_path):
 
 def convert_xml_to_geojson(infile_path, source_encoding, outfile_path):
     logger.info(f'Load XML {infile_path}.xml')
-    data = gpd.read_file(f"{infile_path}.xml", encoding=source_encoding, crs_wkt='2100')
+    data = gpd.read_file(f"{infile_path}.xml", encoding='utf-8', crs_wkt='2100')
     store_as_geojson(data, outfile_path)
 
 
